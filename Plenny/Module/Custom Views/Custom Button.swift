@@ -36,4 +36,5 @@ struct Localization {
     static let enterNameField = "Please enter your name"
     static let passwordField = "Please enter your password"
     static let loginViewImage = "Frame 9"
+    static let logo = "Logo"
 }

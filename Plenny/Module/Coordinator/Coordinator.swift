@@ -74,9 +74,9 @@ class Coordinator: ObservableObject {
         case .login:
             LoginView()
         case .home:
-            Main()
+            PostsView()
         case .search:
-            Main()
+            PostsView()
         }
     }
     

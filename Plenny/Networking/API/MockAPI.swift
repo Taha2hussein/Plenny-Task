@@ -11,7 +11,7 @@ import Foundation
 enum MockAPI {
     
     case login(username: String, password: String)
-    
+    case allPosts
 }
 
 extension MockAPI: EndPointType {
@@ -23,6 +23,8 @@ extension MockAPI: EndPointType {
         switch self {
         case .login:
             return "auth/login"
+        case .allPosts:
+            return "posts"
         }
     }
     
@@ -30,6 +32,8 @@ extension MockAPI: EndPointType {
         switch self {
         case .login:
             return .post
+        case .allPosts:
+            return .get
         }
     }
     
@@ -41,12 +45,18 @@ extension MockAPI: EndPointType {
                                         "password":password],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
+            
+        case .allPosts:
+            return.requestParameters(bodyParameters: nil,
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
+            
         }
     }
     
     var headers: HTTPHeaders {
         switch self {
-        case .login:
+        case .login,.allPosts:
             return [:]
         }
     }

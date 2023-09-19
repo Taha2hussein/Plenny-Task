@@ -37,6 +37,7 @@ class LoginViewModel: ObservableObject {
         }.add(to: &disposal)
     }
     
+    /// if you want to save token received
     func bind() {
         $loginResponse.map({ ($0?.token ?? "") }).assign(to: &$token)
     }
