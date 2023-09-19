@@ -1,9 +1,10 @@
 //
 //  Binding+Utils.swift
-//  Plenny
 //
-//  Created by Taha Hussein on 18/09/2023.
 //
+//  Created by Huy Nguyen on 9/30/20.
+//
+
 import SwiftUI
 
 extension Binding {

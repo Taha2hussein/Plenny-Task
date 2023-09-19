@@ -1,8 +1,8 @@
 //
 //  EmptyNavigationLink.swift
-//  Plenny
+//  SwiftUI-MVVM-C
 //
-//  Created by Taha Hussein on 18/09/2023.
+//  Created by Nguyen Cong Huy on 5/18/21.
 //
 
 import SwiftUI

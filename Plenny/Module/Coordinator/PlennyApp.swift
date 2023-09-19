@@ -12,7 +12,7 @@ struct PlennyApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginViewCoordinator()
+                CoordinatorView()
             }
         }
     }

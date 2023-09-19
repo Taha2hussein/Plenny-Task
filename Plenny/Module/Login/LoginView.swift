@@ -7,14 +7,17 @@
 
 import Foundation
 import SwiftUI
+
 struct LoginView: View {
-    
+    @StateObject var viewModel = LoginViewModel()
     @State var userName: String = ""
     @State var password: String = ""
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .center) {
-                Image("Frame 9")
+                Image(Localization.loginViewImage)
                     .resizable()
                     .frame(height: geo.size.height * 0.6)
                 
@@ -27,8 +30,13 @@ struct LoginView: View {
                 CustomButton (
                     text: Localization.login
                 ) {
-                    print( Localization.clicked ,userName )
+                    viewModel.login(username: userName, password: password)
+                }.onReceive(viewModel.$loginSucessful) { loginSucess in
+                    if loginSucess {
+                        self.coordinator.push(page: .home)
+                    }
                 }
+             
             }
         }.ignoresSafeArea()
     }
@@ -53,8 +61,7 @@ struct AuthenticationView: View {
                 .border(.black,width: 0.2)
                 .cornerRadius(5.0)
             
-        }.padding(.all)
+        }.padding(.leading)
     }
 }
-
 
