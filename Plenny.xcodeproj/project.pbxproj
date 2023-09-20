@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		720193A82AB9FD9000C07DCE /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 720193A52AB9FD9000C07DCE /* posts.json */; };
+		7220A2CE2ABADBC800A778E0 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220A2CC2ABADBC800A778E0 /* Utility.swift */; };
+		7220A2CF2ABADBC800A778E0 /* MockerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220A2CD2ABADBC800A778E0 /* MockerProtocols.swift */; };
 		72333D6E2AB9EAD4002DCCF9 /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72333D6D2AB9EAD4002DCCF9 /* ItemsModel.swift */; };
 		72333D702AB9EC91002DCCF9 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72333D6F2AB9EC91002DCCF9 /* PostViewModel.swift */; };
 		727E97602AB83D24006CE80F /* PlennyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727E975F2AB83D24006CE80F /* PlennyApp.swift */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		720193A52AB9FD9000C07DCE /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		7220A2CC2ABADBC800A778E0 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		7220A2CD2ABADBC800A778E0 /* MockerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockerProtocols.swift; sourceTree = "<group>"; };
 		72333D6D2AB9EAD4002DCCF9 /* ItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
 		72333D6F2AB9EC91002DCCF9 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		727E975C2AB83D24006CE80F /* Plenny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plenny.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				720193A52AB9FD9000C07DCE /* posts.json */,
+				7220A2CD2ABADBC800A778E0 /* MockerProtocols.swift */,
+				7220A2CC2ABADBC800A778E0 /* Utility.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -520,6 +526,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7220A2CF2ABADBC800A778E0 /* MockerProtocols.swift in Sources */,
+				7220A2CE2ABADBC800A778E0 /* Utility.swift in Sources */,
 				727E97762AB83D25006CE80F /* PlennyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

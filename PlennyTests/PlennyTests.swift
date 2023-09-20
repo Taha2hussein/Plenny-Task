@@ -14,11 +14,13 @@ final class PlennyTests: XCTestCase {
     
     var subscriptions = Set<AnyCancellable>()
      var viewModel: LoginViewModel!
+    var mocking: Utility?
     private var disposal = Disposal()
     
     override func setUp() {
         super.setUp()
         viewModel = LoginViewModel()
+        mocking = Utility()
     }
     
     override func tearDown() {
@@ -78,5 +80,36 @@ final class PlennyTests: XCTestCase {
         XCTAssertNotNil(posts)
         let postsCount = posts.count
         XCTAssertEqual(postsCount, 30, "Posts count should be more that 0")
+    }
+    
+    func testParsingMockJSON() {
+        // Load mock JSON data
+        guard let jsonData = mocking?.loadMockJSONData(fileName: "posts") else {
+            XCTFail("Failed to load mock JSON data")
+            return
+        }
+        
+        do {
+            // Parse the JSON data
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            
+            // Assert the expected structure or values in the JSON
+            if let jsonDict = jsonObject as? [String: Any] {
+                if let posts = jsonDict["posts"]  as? [[String: Any]] {
+                    XCTAssertEqual(posts.count, 30)
+                    let firstObject = posts[0]
+                    XCTAssertEqual(firstObject["id"] as? Int, 1)
+                    XCTAssertEqual(firstObject["userId"] as? Int, 9)
+                    
+                    let firstObject1 = posts[1]
+                    XCTAssertEqual(firstObject1["id"] as? Int, 2)
+                    XCTAssertEqual(firstObject1["userId"] as? Int, 13)
+                }
+            } else {
+                XCTFail("Invalid JSON structure")
+            }
+        } catch {
+            XCTFail("Error parsing mock JSON: \(error)")
+        }
     }
 }
